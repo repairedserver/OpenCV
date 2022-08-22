@@ -22,7 +22,7 @@ while True:
         break
 
 bigbar.release()
-cv.destroyAllWindows() # 모든 창 파괴
+cv.destroyAllWindows() # 모든 창 닫음
 
 #cv.waitKey(0) # 특정 지연 또는 키를 누를 때까지의 시간(ms) 대기
 # 0은 무한 대기
