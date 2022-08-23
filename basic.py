@@ -11,6 +11,11 @@ cv.imshow('GrayDog', gray)
 blur = cv.GaussianBlur(img, (7,7), cv.BORDER_DEFAULT) #커널 사이즈는 기본적으로 홀수로 설정
 cv.imshow('BlurDog', blur)
 
-#엣지 캐스케이드
+#이미지의 가장자리 추출
+canny = cv.Canny(img, 125, 175)
+cv.imshow('CannyDog', canny)
 
+#확대 이미지
+dilated = cv.dilate(canny, (7,7), iterations=1) # 가장자리만 추출된 이미지의 가장자리를 확대시킴
+cv.imshow('DilatedDog', dilated)
 cv.waitKey(0)
