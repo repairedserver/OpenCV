@@ -1,8 +1,8 @@
 import cv2 as cv
 import numpy as np
 
-img = cv.imread('Images/rtx3090ti.jpg')
-cv.imshow('RTX', img)
+img = cv.imread('Images/dogeJPG.jpg')
+cv.imshow('Doge', img)
 
 # 이미지 이동
 def translate(img, x, y):
@@ -16,7 +16,7 @@ def translate(img, x, y):
 # y -> Down
 
 translated = translate(img, 100, 100) # 이미지를 오른쪽으로 100칸 아래로 100칸
-cv.imshow('TranslatedRTX', translated)
+cv.imshow('TranslatedDoge', translated)
 
 # 이미지 회전
 def rotate(img, angle, rotPoint=None):
@@ -31,5 +31,16 @@ def rotate(img, angle, rotPoint=None):
     return cv.warpAffine(img, rotMat, dimentions)
 
 rotated = rotate(img, 45) # 오른쪽으로 45도 회전
-cv.imshow('SpinRTX', rotated)
+cv.imshow('SpinDoge', rotated)
+
+rotated_rotated = rotate(rotated, -45) # 다시 왼쪽으로 45도 회전
+cv.imshow('SpinReturnDoge', rotated_rotated)
+
+# 크기 조정
+resized = cv.resize(img, (500, 500), interpolation=cv.INTER_CUBIC)
+cv.imshow('ResizeDoge', resized)
+
+# 뒤집기
+fliped = cv.flip(img, 0)
+cv.imshow('FlipDoge', fliped)
 cv.waitKey(0)
