@@ -15,7 +15,7 @@ cv.imshow('GaussBlurDog', gauss)
 median = cv.medianBlur(img, 7) # 이 커널의 크기는 튜플이 아닌 그냥 정수(자동으로 설정됨)
 cv.imshow('MedianBlurDog', median)
 
-# Bilaterial
+# 자연스러운 가장자리 (Bilaterial)
 bilaterial = cv.bilateralFilter(img, 10, 35, 25)
 cv.imshow('BilaterialDog', bilaterial)
 cv.waitKey(0)
