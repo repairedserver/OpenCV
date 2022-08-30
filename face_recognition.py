@@ -4,13 +4,13 @@ import cv2 as cv
 haar_cascade = cv.CascadeClassifier('haar_face.xml') 
 people = ['Ben Afflek', 'Elton John', 'Jerry Seinfield', 'Madonna', 'Mindy Kaling']
 
-features = np.load('Features.npy')
-labels = np.load('Labels.npy')
+# features = np.load('Features.npy', allow_pickle=True)
+# labels = np.load('Labels.npy')
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
-face_recognizer.read('face_trained.yml')
+face_recognizer.read('Face_trained.yml')
 
-img = cv.imread(r'C:\Users\DSM2022\Desktop\GitHub\OpenCV\Faces\train\Ben_Afflek\2.jp0')
+img = cv.imread(r'C:\Users\DSM2022\Desktop\GitHub\OpenCV\Faces\train\Ben_Afflek\14.jpg')
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Person', gray)
 
